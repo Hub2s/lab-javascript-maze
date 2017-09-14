@@ -1,3 +1,8 @@
+//1 step is to Update the maze file
+//1 step is to Update the maze file
+
+
+
 var Maze = require('maze.js');
 
 var T = true, F = false;
