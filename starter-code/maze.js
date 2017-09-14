@@ -8,17 +8,53 @@ var Maze = function(map, exit) {
   this._exit = {
     row: exit.row,
     col: exit.col
-  }
-}
+  };
+
+};
+
+var dirs = {
+  up: 0,
+  right: 1,
+  down: 2,
+  left: 3
+};
 
 Maze.prototype.turnLeft      = function(){
-  this.miner.dir =() // (this.miner...)
-}
+  switch (this.miner.dir) {
+    case 0:
+      this.miner.dir = 3;
+      break;
+    case 1:
+      this.miner.dir = 0;
+      break;
+    case 2:
+      this.miner.dir = 1;
+      break;
+    case 3:
+      this.miner.dir = 2;
+      break;
+  }
+};
 
 Maze.prototype.turnRight     = function(){
-}
+  switch (this.miner.dir) {
+    case 0:
+      this.miner.dir = 1;
+      break;
+    case 1:
+      this.miner.dir = 2;
+      break;
+    case 2:
+      this.miner.dir = 3;
+      break;
+    case 3:
+      this.miner.dir = 0;
+      break;
+  }
+};
 
 Maze.prototype.isPathForward = function(){
+
 }
 
 Maze.prototype.isPathLeft    = function(){
@@ -34,6 +70,27 @@ Maze.prototype.notDone       = function(){
 }
 
 module.exports = Maze;
+
+/*while (maze.notDone()) {
+  if (maze.isPathLeft()) {
+    maze.turnLeft();
+    maze.moveForward();
+  } else {
+    if (maze.isPathForward()) {
+      maze.moveForward();
+    } else {
+      if (maze.isPathRight()) {
+        maze.turnRight();
+        maze.moveForward();
+      } else {
+        maze.turnLeft();
+      }
+    }
+  }
+}*/
+
+
+
 
 // Level1
 // moveForward();
